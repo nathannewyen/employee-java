@@ -1,0 +1,15 @@
+type Mutation {
+    createEmployee(createEmployeeRequest:EmployeeRequest) : EmployeeEntity
+    deleteEmployee(employeeId: Int!) : EmployeeEntity
+}
+
+input EmployeeRequest {
+    employeeName: String!
+    employeeEmail: String!
+}
+
+type EmployeeEntity {
+    employeeId: Int
+    employeeName: String
+    employeeEmail: String
+}

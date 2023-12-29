@@ -1,0 +1,14 @@
+scalar DateTime
+scalar Date
+
+type Query {
+    getEmployeeByEmail(employeeEmail: String) : Employee
+    getAllEmployees: [Employee]
+}
+
+type Employee {
+    employeeId: Int
+    employeeName: String
+    employeeEmail: String
+    lastUpdate: DateTime
+}
