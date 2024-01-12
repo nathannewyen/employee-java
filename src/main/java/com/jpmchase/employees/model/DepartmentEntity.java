@@ -1,9 +1,13 @@
 package com.jpmchase.employees.model;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Collection;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,7 +24,7 @@ public class DepartmentEntity {
     @Column(name = "DEPARTMENT_NAME")
     private String departmentName;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "PARENT_DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
-    private DepartmentEntity department;
+    @OneToMany
+    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")
+    private List<EmployeeEntity> employeeIds;
 }

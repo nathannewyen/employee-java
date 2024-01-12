@@ -4,11 +4,18 @@ scalar Date
 type Query {
     getEmployeeByEmail(employeeEmail: String) : Employee
     getAllEmployees: [Employee]
+    getAllDepartments: [Department]
 }
 
 type Employee {
     employeeId: Int
     employeeName: String
     employeeEmail: String
+    department: String
     lastUpdate: DateTime
+}
+
+type Department {
+    departmentId: Int
+    departmentName: String
 }
